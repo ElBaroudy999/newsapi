@@ -48,9 +48,9 @@ Route::get('usersresource',function(){
     $users =\App\User::paginate();
     return new App\Http\Resources\UsersResource($users);
 });
-Route::get('posts',function(){
-    return \App\Post::all();
-});
+//Route::get('posts',function(){
+//    return \App\Post::all();
+//});
 
 Route::middleware('auth:api')->group(
     function (){

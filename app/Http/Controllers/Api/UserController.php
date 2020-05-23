@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\TokenResource;
 use App\Http\Resources\UserResource;
+use App\Http\Resources\UsersResource;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -35,14 +36,14 @@ class UserController extends Controller
     public function index()
     {
         $users = User::paginate();
-        return new \App\Http\Resources\UsersResource($users);
+        return new UsersResource($users);
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return UserResource
      */
     public function store(Request $request)
     {

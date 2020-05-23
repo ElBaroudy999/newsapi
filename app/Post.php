@@ -4,6 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @method static find(int $id)
+ * @method static paginate(int $int)
+ */
 class Post extends Model
 {
         protected $fillable = [

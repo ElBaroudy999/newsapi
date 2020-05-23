@@ -67,7 +67,8 @@ class UserController extends Controller
      */
     public function show($id)
     {
-         return new \App\Http\Resources\UserResource(User::find($id));
+        $user = User::find($id);
+         return new UserResource($user);
     }
 
     /**

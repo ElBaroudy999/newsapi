@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+/* User */
+Route::get('users','Api\UserController@index');
+Route::get('user/{id}','Api\UserController@show');
+/* endUser */
+
 /* Post */
 Route::post('token','Api\UserController@requestToken');
 Route::post('register','Api\UserController@store');
@@ -31,9 +36,9 @@ Route::post('register','Api\UserController@store');
 /*************************************************************************/
 
 /*get request with api*/
-Route::get('users',function(){
-    return \App\User::all();
-});
+//Route::get('users',function(){
+//    return \App\User::all();
+//});
 
 /*use api controller*/
 Route::post('register','Api\UserController@store');
@@ -44,10 +49,10 @@ Route::get('posts/user/{id}','Api\UserController@getPosts');
 Route::get('comments/user/{id}','Api\UserController@getComments');
 Route::get('post/{id}','Api\PostController@show');
 /**/
-Route::get('usersresource',function(){
-    $users =\App\User::paginate();
-    return new App\Http\Resources\UsersResource($users);
-});
+//Route::get('usersresource',function(){
+//    $users =\App\User::paginate();
+//    return new App\Http\Resources\UsersResource($users);
+//});
 //Route::get('posts',function(){
 //    return \App\Post::all();
 //});
